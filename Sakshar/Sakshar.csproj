@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DCDC0A91-2EFE-4F45-B8C6-350F737F2C4D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sakshar</RootNamespace>
+    <AssemblyName>Sakshar</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LeapCSharp.NET4.0, Version=3.2.0.0, Culture=neutral, PublicKeyToken=6e1b1368e71eba9b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\LeapCSharp.NET4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK">
+      <HintPath>Dependencies\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="LeapControl.cs" />
+    <Compile Include="MediapipeControl.cs" />
+    <Compile Include="MouseControl.cs" />
+    <Compile Include="TestingMode.cs" />
+    <Compile Include="TeachingMode.cs" />
+    <Compile Include="MainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainScreen.Designer.cs">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Language.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Language.hi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.hi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SlidesGenerator.cs" />
+    <Compile Include="TextWriter.cs" />
+    <EmbeddedResource Include="MainScreen.dua-CM.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen.en.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen.hi.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language.hi.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.hi.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="resources\en\en.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="resources\hi\hi.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="resources\settings.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dependencies\OpenTK.dll" />
+    <Content Include="ReadMe.txt" />
+    <Content Include="resources\backgrounds\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\10.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\11.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\12.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\13.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\14.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\15.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\16.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\17.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\18.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\19.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\20.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\21.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\22.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\5.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\6.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\backgrounds\9.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\dialogbox\1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Aeroplane.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Ant.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Apple.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Arrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Ball.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Banana.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Bear.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Butterfly.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Camera.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Cat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Cherry.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Computer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Doctor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Dog.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Dolphin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Duck.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Eagle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Egg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Elephant.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Eye.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Fan.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Fire.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Fish.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Fox.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Girl.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Goat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Grapes.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Grass.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Hammer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Hat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Hen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Horse.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Icecream.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Ink.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Insect.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Iron.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Jacket.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Jail.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Jar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Jug.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Kettle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Key.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\King.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Kite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Lamp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Laptop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Lemon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Lion.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Mango.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Mat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Milk.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Monkey.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Nails.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Nest.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Newspaper.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Nurse.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Onion.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Orange.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Ostrich.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Owl.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Parrot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Pencil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Pigeon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Pineapple.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Quail.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Queen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Queue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Quiver.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Rabbit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Radio.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Rat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Rose.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Satellite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Ship.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Shirt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Sun.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Table.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Telephone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Tiger.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Train.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Umbrella.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Unicorn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Uniform.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Utensil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Van.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Vase.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Village.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Violin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Watch.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Water.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Wheel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Woman.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Xerox.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\XmasTree.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\XRay.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Xylophone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Yacht.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Yak.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Yarn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Yoyo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Zebra.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Zinnia.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Zip.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\en\alphabets\Zoo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\hi\alphabets\अँगूठा.png" />
+    <Content Include="resources\hi\alphabets\अंगूठी.png" />
+    <Content Include="resources\hi\alphabets\अंगूर.png" />
+    <Content Include="resources\hi\alphabets\अंडा.png" />
+    <Content Include="resources\hi\alphabets\अजगर.png" />
+    <Content Include="resources\hi\alphabets\अदरक.png" />
+    <Content Include="resources\hi\alphabets\अनार.png" />
+    <Content Include="resources\hi\alphabets\अमरूद.png" />
+    <Content Include="resources\hi\alphabets\आग.png" />
+    <Content Include="resources\hi\alphabets\आग_2.png" />
+    <Content Include="resources\hi\alphabets\आडू.png" />
+    <Content Include="resources\hi\alphabets\आम.png" />
+    <Content Include="resources\hi\alphabets\आलू.png" />
+    <Content Include="resources\hi\alphabets\इडली.png" />
+    <Content Include="resources\hi\alphabets\इमरती.png" />
+    <Content Include="resources\hi\alphabets\इमली.png" />
+    <Content Include="resources\hi\alphabets\इमली_2.png" />
+    <Content Include="resources\hi\alphabets\इस्त्री.png" />
+    <Content Include="resources\hi\alphabets\ईंख %282%29.png" />
+    <Content Include="resources\hi\alphabets\ईंख.png" />
+    <Content Include="resources\hi\alphabets\ईंट.png" />
+    <Content Include="resources\hi\alphabets\ईंट_2.png" />
+    <Content Include="resources\hi\alphabets\ईद.png" />
+    <Content Include="resources\hi\alphabets\ईद_2.png" />
+    <Content Include="resources\hi\alphabets\ईश्वर.png" />
+    <Content Include="resources\hi\alphabets\ईश्वर_2.png" />
+    <Content Include="resources\hi\alphabets\उ4.png" />
+    <Content Include="resources\hi\alphabets\उपहार.png" />
+    <Content Include="resources\hi\alphabets\उल्लू.png" />
+    <Content Include="resources\hi\alphabets\उल्लू_2.png" />
+    <Content Include="resources\hi\alphabets\उस्तरा.png" />
+    <Content Include="resources\hi\alphabets\ऊ3.png" />
+    <Content Include="resources\hi\alphabets\ऊ4.png" />
+    <Content Include="resources\hi\alphabets\ऊँट.png" />
+    <Content Include="resources\hi\alphabets\ऊन.png" />
+    <Content Include="resources\hi\alphabets\ऋ2.png" />
+    <Content Include="resources\hi\alphabets\ऋ3.png" />
+    <Content Include="resources\hi\alphabets\ऋ4.png" />
+    <Content Include="resources\hi\alphabets\ऋषि.png" />
+    <Content Include="resources\hi\alphabets\ए3.png" />
+    <Content Include="resources\hi\alphabets\ए4.png" />
+    <Content Include="resources\hi\alphabets\एकतारा.png" />
+    <Content Include="resources\hi\alphabets\एड़ी.png" />
+    <Content Include="resources\hi\alphabets\ऐ3.png" />
+    <Content Include="resources\hi\alphabets\ऐ4.png" />
+    <Content Include="resources\hi\alphabets\ऐनक.png" />
+    <Content Include="resources\hi\alphabets\ऐरावत.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\hi\alphabets\ओ2.png" />
+    <Content Include="resources\hi\alphabets\ओ3.png" />
+    <Content Include="resources\hi\alphabets\ओ4.png" />
+    <Content Include="resources\hi\alphabets\ओखली.png" />
+    <Content Include="resources\hi\alphabets\ओखली_2.png" />
+    <Content Include="resources\hi\alphabets\औ4.png" />
+    <Content Include="resources\hi\alphabets\औरत.png" />
+    <Content Include="resources\hi\alphabets\औषधि.png" />
+    <Content Include="resources\hi\alphabets\औषधि_2.png" />
+    <Content Include="resources\hi\alphabets\औज़ार.png" />
+    <Content Include="resources\hi\alphabets\कबूतर.png" />
+    <Content Include="resources\hi\alphabets\कमल.png" />
+    <Content Include="resources\hi\alphabets\कमल_2.png" />
+    <Content Include="resources\hi\alphabets\कलस.png" />
+    <Content Include="resources\hi\alphabets\कौआ.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\hi\alphabets\क्ष2.png" />
+    <Content Include="resources\hi\alphabets\क्ष3.png" />
+    <Content Include="resources\hi\alphabets\क्ष4.png" />
+    <Content Include="resources\hi\alphabets\क्षत्रिय.png" />
+    <Content Include="resources\hi\alphabets\खटमल.png" />
+    <Content Include="resources\hi\alphabets\खरगोश.png" />
+    <Content Include="resources\hi\alphabets\खरबूजा.png" />
+    <Content Include="resources\hi\alphabets\खेत.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\hi\alphabets\गधा.png" />
+    <Content Include="resources\hi\alphabets\गमला.png" />
+    <Content Include="resources\hi\alphabets\गाजर.png" />
+    <Content Include="resources\hi\alphabets\गाय.png" />
+    <Content Include="resources\hi\alphabets\घर.png" />
+    <Content Include="resources\hi\alphabets\घोड़ा.png" />
+    <Content Include="resources\hi\alphabets\घड़ा.png" />
+    <Content Include="resources\hi\alphabets\घड़ी.png" />
+    <Content Include="resources\hi\alphabets\चंद्रमा.png" />
+    <Content Include="resources\hi\alphabets\चम्मच.png" />
+    <Content Include="resources\hi\alphabets\चरखा.png" />
+    <Content Include="resources\hi\alphabets\चील.png" />
+    <Content Include="resources\hi\alphabets\छतरी.png" />
+    <Content Include="resources\hi\alphabets\छत्ता.png" />
+    <Content Include="resources\hi\alphabets\छात्रा.png" />
+    <Content Include="resources\hi\alphabets\छड़ी.png" />
+    <Content Include="resources\hi\alphabets\छड़ी_2.png" />
+    <Content Include="resources\hi\alphabets\जग.png" />
+    <Content Include="resources\hi\alphabets\जहाज़.png" />
+    <Content Include="resources\hi\alphabets\जोकर.png" />
+    <Content Include="resources\hi\alphabets\ज्ञ3.png" />
+    <Content Include="resources\hi\alphabets\ज्ञ4.png" />
+    <Content Include="resources\hi\alphabets\ज्ञान.png" />
+    <Content Include="resources\hi\alphabets\ज्ञान_2.png" />
+    <Content Include="resources\hi\alphabets\ज्ञानी.png" />
+    <Content Include="resources\hi\alphabets\जड़.png" />
+    <Content Include="resources\hi\alphabets\झंडा.png" />
+    <Content Include="resources\hi\alphabets\झरना.png" />
+    <Content Include="resources\hi\alphabets\झाडू.png" />
+    <Content Include="resources\hi\alphabets\झूला.png" />
+    <Content Include="resources\hi\alphabets\ट4.png" />
+    <Content Include="resources\hi\alphabets\टब.png" />
+    <Content Include="resources\hi\alphabets\टमाटर.png" />
+    <Content Include="resources\hi\alphabets\टोकरी.png" />
+    <Content Include="resources\hi\alphabets\ठ4.png" />
+    <Content Include="resources\hi\alphabets\ठठेरा.png" />
+    <Content Include="resources\hi\alphabets\ठप्पा.png" />
+    <Content Include="resources\hi\alphabets\ठेला.png" />
+    <Content Include="resources\hi\alphabets\डब्बा.png" />
+    <Content Include="resources\hi\alphabets\डमरू.png" />
+    <Content Include="resources\hi\alphabets\डलिया.png" />
+    <Content Include="resources\hi\alphabets\डाकिया.png" />
+    <Content Include="resources\hi\alphabets\डोरी.png" />
+    <Content Include="resources\hi\alphabets\ढक्कन.png" />
+    <Content Include="resources\hi\alphabets\ढपली.png" />
+    <Content Include="resources\hi\alphabets\ढोल.png" />
+    <Content Include="resources\hi\alphabets\ढोलक.png" />
+    <Content Include="resources\hi\alphabets\तबला.png" />
+    <Content Include="resources\hi\alphabets\तरबूज़.png" />
+    <Content Include="resources\hi\alphabets\तलवार.png" />
+    <Content Include="resources\hi\alphabets\तारा.png" />
+    <Content Include="resources\hi\alphabets\त्र4.png" />
+    <Content Include="resources\hi\alphabets\त्रिकोण.png" />
+    <Content Include="resources\hi\alphabets\त्रिभुज.png" />
+    <Content Include="resources\hi\alphabets\त्रिशूल.png" />
+    <Content Include="resources\hi\alphabets\थन.png" />
+    <Content Include="resources\hi\alphabets\थरमस.png" />
+    <Content Include="resources\hi\alphabets\थरमस_2.png" />
+    <Content Include="resources\hi\alphabets\थाली.png" />
+    <Content Include="resources\hi\alphabets\थैला.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\hi\alphabets\दरवाजा.png" />
+    <Content Include="resources\hi\alphabets\दर्जी.png" />
+    <Content Include="resources\hi\alphabets\दवा.png" />
+    <Content Include="resources\hi\alphabets\दवात.png" />
+    <Content Include="resources\hi\alphabets\धनुष.png" />
+    <Content Include="resources\hi\alphabets\धरती.png" />
+    <Content Include="resources\hi\alphabets\धागा.png" />
+    <Content Include="resources\hi\alphabets\धोबी.png" />
+    <Content Include="resources\hi\alphabets\नगर.png" />
+    <Content Include="resources\hi\alphabets\नदी.png" />
+    <Content Include="resources\hi\alphabets\नल.png" />
+    <Content Include="resources\hi\alphabets\नारियल.png" />
+    <Content Include="resources\hi\alphabets\पंख.png" />
+    <Content Include="resources\hi\alphabets\पक्षी.png" />
+    <Content Include="resources\hi\alphabets\पतंग.png" />
+    <Content Include="resources\hi\alphabets\पपीता.png" />
+    <Content Include="resources\hi\alphabets\फल.png" />
+    <Content Include="resources\hi\alphabets\फाटक.png" />
+    <Content Include="resources\hi\alphabets\फुआरा.png" />
+    <Content Include="resources\hi\alphabets\फूल.png" />
+    <Content Include="resources\hi\alphabets\बकरी.png" />
+    <Content Include="resources\hi\alphabets\बतख.png" />
+    <Content Include="resources\hi\alphabets\बस.png" />
+    <Content Include="resources\hi\alphabets\बाग.png" />
+    <Content Include="resources\hi\alphabets\भारत.png" />
+    <Content Include="resources\hi\alphabets\भालू.png" />
+    <Content Include="resources\hi\alphabets\भेड़.png" />
+    <Content Include="resources\hi\alphabets\भेड़िया.png" />
+    <Content Include="resources\hi\alphabets\मगरमच्छ.png" />
+    <Content Include="resources\hi\alphabets\मछली.png" />
+    <Content Include="resources\hi\alphabets\मछली_2.png" />
+    <Content Include="resources\hi\alphabets\मटर.png" />
+    <Content Include="resources\hi\alphabets\मूली.png" />
+    <Content Include="resources\hi\alphabets\यज्ञ.png" />
+    <Content Include="resources\hi\alphabets\याक.png" />
+    <Content Include="resources\hi\alphabets\यान.png" />
+    <Content Include="resources\hi\alphabets\योग.png" />
+    <Content Include="resources\hi\alphabets\रबड़.png" />
+    <Content Include="resources\hi\alphabets\रस्सी.png" />
+    <Content Include="resources\hi\alphabets\राजा.png" />
+    <Content Include="resources\hi\alphabets\रुपए.png" />
+    <Content Include="resources\hi\alphabets\लंगूर.png" />
+    <Content Include="resources\hi\alphabets\लट्टू.png" />
+    <Content Include="resources\hi\alphabets\लड्डू.png" />
+    <Content Include="resources\hi\alphabets\लड़का.png" />
+    <Content Include="resources\hi\alphabets\वक.png" />
+    <Content Include="resources\hi\alphabets\वन.png" />
+    <Content Include="resources\hi\alphabets\वर्षा.png" />
+    <Content Include="resources\hi\alphabets\वृक्ष.png" />
+    <Content Include="resources\hi\alphabets\शंख.png" />
+    <Content Include="resources\hi\alphabets\शरवत.png" />
+    <Content Include="resources\hi\alphabets\शलगम.png" />
+    <Content Include="resources\hi\alphabets\शलगम_2.png" />
+    <Content Include="resources\hi\alphabets\शेर.png" />
+    <Content Include="resources\hi\alphabets\ष2.png" />
+    <Content Include="resources\hi\alphabets\ष3.png" />
+    <Content Include="resources\hi\alphabets\ष4.png" />
+    <Content Include="resources\hi\alphabets\षटकोण.png" />
+    <Content Include="resources\hi\alphabets\संतरा.png" />
+    <Content Include="resources\hi\alphabets\सब्ज़ियाँ.png" />
+    <Content Include="resources\hi\alphabets\सरकस.png" />
+    <Content Include="resources\hi\alphabets\सेब.png" />
+    <Content Include="resources\hi\alphabets\हंस.png" />
+    <Content Include="resources\hi\alphabets\हथेली.png" />
+    <Content Include="resources\hi\alphabets\हथोड़ा.png" />
+    <Content Include="resources\hi\alphabets\हाथी.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
