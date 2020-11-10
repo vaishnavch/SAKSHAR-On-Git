@@ -127,13 +127,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="gameModeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 64</value>
-  </data>
-  <data name="gameModeLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>45, 52</value>
   </data>
   <data name="gameModeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 17</value>
+    <value>65, 13</value>
   </data>
   <data name="gameModeLabel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -160,13 +157,10 @@
     <value>Testing Mode</value>
   </data>
   <data name="gameModeComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 60</value>
-  </data>
-  <data name="gameModeComboBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>116, 49</value>
   </data>
   <data name="gameModeComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 24</value>
+    <value>117, 21</value>
   </data>
   <data name="gameModeComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -190,13 +184,10 @@
     <value>हिन्दी</value>
   </data>
   <data name="langComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 23</value>
-  </data>
-  <data name="langComboBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>116, 19</value>
   </data>
   <data name="langComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 24</value>
+    <value>117, 21</value>
   </data>
   <data name="langComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -217,13 +208,10 @@
     <value>True</value>
   </data>
   <data name="chooseLangLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 26</value>
-  </data>
-  <data name="chooseLangLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>45, 21</value>
   </data>
   <data name="chooseLangLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 17</value>
+    <value>55, 13</value>
   </data>
   <data name="chooseLangLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -244,16 +232,10 @@
     <value>3</value>
   </data>
   <data name="languageGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 16</value>
-  </data>
-  <data name="languageGroupBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="languageGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>14, 13</value>
   </data>
   <data name="languageGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>404, 107</value>
+    <value>303, 87</value>
   </data>
   <data name="languageGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -274,19 +256,16 @@
     <value>3</value>
   </data>
   <data name="startButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>289, 130</value>
-  </data>
-  <data name="startButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>217, 106</value>
   </data>
   <data name="startButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 44</value>
+    <value>100, 36</value>
   </data>
   <data name="startButton.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="startButton.Text" xml:space="preserve">
-    <value>Start Projector</value>
+    <value>Shuru</value>
   </data>
   <data name="&gt;&gt;startButton.Name" xml:space="preserve">
     <value>startButton</value>
@@ -304,10 +283,13 @@
     <value>NoControl</value>
   </data>
   <data name="CalibrateLeapMotion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 130</value>
+    <value>121, 106</value>
+  </data>
+  <data name="CalibrateLeapMotion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="CalibrateLeapMotion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 44</value>
+    <value>91, 36</value>
   </data>
   <data name="CalibrateLeapMotion.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -328,10 +310,13 @@
     <value>1</value>
   </data>
   <data name="CalibrateMouse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 130</value>
+    <value>14, 106</value>
+  </data>
+  <data name="CalibrateMouse.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="CalibrateMouse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 44</value>
+    <value>100, 36</value>
   </data>
   <data name="CalibrateMouse.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -355,13 +340,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>440, 186</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>330, 151</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
