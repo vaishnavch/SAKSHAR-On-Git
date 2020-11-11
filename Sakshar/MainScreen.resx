@@ -322,7 +322,7 @@
     <value>16</value>
   </data>
   <data name="CalibrateMouse.Text" xml:space="preserve">
-    <value>Calibrate Mouse</value>
+    <value>Calibrate</value>
   </data>
   <data name="&gt;&gt;CalibrateMouse.Name" xml:space="preserve">
     <value>CalibrateMouse</value>
